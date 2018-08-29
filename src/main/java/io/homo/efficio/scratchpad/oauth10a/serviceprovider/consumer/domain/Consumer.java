@@ -2,6 +2,7 @@ package io.homo.efficio.scratchpad.oauth10a.serviceprovider.consumer.domain;
 
 import io.homo.efficio.scratchpad.oauth10a.serviceprovider.common.domain.BaseEntity;
 import lombok.Data;
+import lombok.NonNull;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -33,7 +34,14 @@ public class Consumer extends BaseEntity {
 
     private String consumerSecret;
 
-    public Consumer(@NotNull String name, @NotNull String description, @NotNull String callbackUrl) {
+    public Consumer(@NonNull String name, @NonNull String description, @NonNull String callbackUrl) {
+        this.name = name;
+        this.description = description;
+        this.callbackUrl = callbackUrl;
+    }
+
+    public Consumer(@NonNull Long id, @NonNull String name, @NonNull String description, @NonNull String callbackUrl) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.callbackUrl = callbackUrl;

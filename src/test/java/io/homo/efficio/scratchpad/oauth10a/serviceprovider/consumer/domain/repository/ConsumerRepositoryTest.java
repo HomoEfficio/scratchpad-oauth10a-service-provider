@@ -32,7 +32,7 @@ public class ConsumerRepositoryTest {
                 "http://oauth10a.consumer.homoefficio.io/callback"
         );
 
-        
+
         // when
         final Consumer dbConsumer = this.repository.saveAndFlush(consumer);
 
