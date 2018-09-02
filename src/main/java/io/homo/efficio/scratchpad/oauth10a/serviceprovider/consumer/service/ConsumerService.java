@@ -1,12 +1,17 @@
 package io.homo.efficio.scratchpad.oauth10a.serviceprovider.consumer.service;
 
+import io.homo.efficio.scratchpad.oauth10a.serviceprovider.common.util.CryptoUtil;
 import io.homo.efficio.scratchpad.oauth10a.serviceprovider.consumer.domain.Consumer;
 import io.homo.efficio.scratchpad.oauth10a.serviceprovider.consumer.domain.repository.ConsumerRepository;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.security.KeyPair;
+import java.security.KeyPairGenerator;
 
 /**
  * @author homo.efficio@gmail.com
@@ -20,7 +25,16 @@ public class ConsumerService {
     @NonNull
     private ConsumerRepository repository;
 
+    @NonNull
+    private KeyPairGenerator keyPairGenerator;
+
     public Consumer save(Consumer consumer) {
+        final KeyPair keyPair = this.keyPairGenerator.generateKeyPair();
+        final String consumerKey = CryptoUtil.generateConsumerKey();
+        final String consumerSecret = CryptoUtil.generateConsumerSecret();
+        consumer.setConsumerKey(consumerKey);
+        consumer.setConsumerSecret(consumerSecret);
+
         return this.repository.save(consumer);
     }
 
