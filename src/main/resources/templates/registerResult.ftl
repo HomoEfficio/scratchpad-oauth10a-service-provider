@@ -11,6 +11,7 @@
     <!--[if gt IE 8]><!-->
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
     <!--<![endif]-->
+    <link rel="stylesheet" href="/css/custom.css">
     <style>
         .pad-1 {
             padding: 1em;
@@ -25,14 +26,14 @@
 </div>
 <hr/>
 <div class="pure-g">
-  <div class="pure-u-1">
+  <div class="pure-u-1 pad-1">
     <span class="pure-button pure-button-primary button-large">Consumer Key: ${consumer.consumerKey}</span>
   </div>
-  <div class="pure-u-1">
-    <span class="pure-button pure-button-error button-large">Consumer Secret: ${consumer.consumerSecret}</span>
+  <div class="pure-u-1 pad-1">
+    <span class="pure-button button-error button-large">Consumer Secret: ${consumer.consumerSecret}</span>
   </div>
-  <div class="pure-u-1">
-    <span class="pure-button pure-button-secondary button-large">Callback URL: ${consumer.callbackUrl}</span>
+  <div class="pure-u-1 pad-1">
+    <span class="pure-button button-secondary button-large">Callback URL: ${consumer.callbackUrl}</span>
   </div>
 </div>
 
