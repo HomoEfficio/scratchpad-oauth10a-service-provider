@@ -34,6 +34,7 @@ public class ConsumerController {
         mav.setViewName("registerResult");
         mav.addObject("consumer", this.service.save(consumer));
         return mav;
-
     }
+
+    // TODO: Request Token(Temporary Credentials) End Point 만들 차례
 }
