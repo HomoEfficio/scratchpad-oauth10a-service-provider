@@ -17,9 +17,24 @@
         }
     </style>
 </head>
-<body onload="initFocus()">
+<body>
 <div class="pure-g">
+  <div class="pure-u-1">
     <h1>[${consumer.name}] 애플리케이션이 등록되었습니다.</h1>
+  </div>
 </div>
+<hr/>
+<div class="pure-g">
+  <div class="pure-u-1">
+    <span class="pure-button pure-button-primary button-large">Consumer Key: ${consumer.consumerKey}</span>
+  </div>
+  <div class="pure-u-1">
+    <span class="pure-button pure-button-error button-large">Consumer Secret: ${consumer.consumerSecret}</span>
+  </div>
+  <div class="pure-u-1">
+    <span class="pure-button pure-button-secondary button-large">Callback URL: ${consumer.callbackUrl}</span>
+  </div>
+</div>
+
 </body>
 </html>

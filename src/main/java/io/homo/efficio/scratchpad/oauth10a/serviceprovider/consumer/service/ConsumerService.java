@@ -25,11 +25,7 @@ public class ConsumerService {
     @NonNull
     private ConsumerRepository repository;
 
-    @NonNull
-    private KeyPairGenerator keyPairGenerator;
-
     public Consumer save(Consumer consumer) {
-        final KeyPair keyPair = this.keyPairGenerator.generateKeyPair();
         final String consumerKey = CryptoUtil.generateConsumerKey();
         final String consumerSecret = CryptoUtil.generateConsumerSecret();
         consumer.setConsumerKey(consumerKey);
